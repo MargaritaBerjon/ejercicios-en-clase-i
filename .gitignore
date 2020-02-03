@@ -52,3 +52,7 @@ public
 
 # vscode
 .vscode
+
+# ignored
+gitignored/
+gitignored.*
