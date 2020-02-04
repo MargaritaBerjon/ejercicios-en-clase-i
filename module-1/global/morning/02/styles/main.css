@@ -1,0 +1,71 @@
+/* fonts */
+
+@font-face {
+  font-family: Circular;
+  src: url('https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-light.woff2')
+      format('woff2'),
+    url('https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-light.woff')
+      format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Circular;
+  src: url('https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-black.woff2')
+      format('woff2'),
+    url('https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-black.woff')
+      format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* reset styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Circular, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* page */
+
+.page {
+  margin: 0;
+}
+
+/* header */
+
+.header {
+  background: black;
+}
+
+.header-logo {
+  width: 100px;
+}
+
+.header-menu-item {
+  display: inline-block;
+}
+
+.header-menu-link {
+  display: inline-block;
+  padding: 10px;
+  color: white;
+}
+
+.header-menu-link:hover {
+  color: #4285f4;
+}
