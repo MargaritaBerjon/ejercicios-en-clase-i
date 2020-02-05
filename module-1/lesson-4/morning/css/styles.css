@@ -16,9 +16,7 @@
 }
 
 .item {
-  padding-top: 25px;
   background: white;
-  text-align: center;
   font-size: 36px;
 }
 
@@ -26,8 +24,11 @@
 
 .container {
   width: 500px;
+  height: 200px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .item {
@@ -37,14 +38,14 @@
   border: 5px solid #666;
 }
 
-.item-1 {
-  flex-grow: 1;
-}
-
-.item-2 {
-  flex-grow: 2;
-}
-
 .item-3 {
-  flex-grow: 1;
+  align-self: flex-end;
+}
+
+.item-1 {
+  display: flex;
+  justify-content: center;
+  animation: delay 1s;
+  -moz-animation: delay 1s;
+  -webkit-animation: time 1s;
 }
