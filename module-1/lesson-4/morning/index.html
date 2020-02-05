@@ -25,18 +25,18 @@
 
     <h3>¿A quién afecta flex?</h3>
 
-    <ul>
+    <ol>
       <li>
         Con flex solo son afectados el contenedor <strong>.container</strong> y a sus hijos directos <strong>.item</strong>.
       </li>
       <li>
         Los nietos del contenedor no se ven afectados.
       </li>
-    </ul>
+    </ol>
 
     <h3>¿Dónde se aplican?</h3>
 
-    <ul>
+    <ol>
       <li>
         Se aplican los estilos del contenedor (dirección, distribución...) en el contenedor.
       </li>
@@ -46,11 +46,11 @@
       <li>
         Si uno de los hijos tiene una disposición o tamaño diferente se le aplica estilos solo a ese hijo <strong>.item-x</strong>.
       </li>
-    </ul>
+    </ol>
 
     <h3>Procedimiento normal</h3>
 
-    <ul>
+    <ol>
       <li>
         Se recomienda aplicar <strong>box-sizing</strong> y <strong>border</strong> o <strong>background-color</strong> al contenedor y a los hijos para visualizar cómo se comportan (después se puede borrar).
       </li>
@@ -78,11 +78,11 @@
       <li>
         Indicar a todos los items el tamaño que deben tener: ancho si el eje principal es horizontal o alto si el eje principal es vertical.
       </li>
-    </ul>
+    </ol>
 
     <h3>Procedimiento avanzado</h3>
 
-    <ul>
+    <ol start="10">
       <li>
         Si queremos indicar un ancho variable en función del espacio sobrante o el espacio faltante, usamos: <strong>flex-grow</strong>, <strong>flex-shring</strong>.
       </li>
@@ -95,7 +95,7 @@
       <li>
         Indicar en un item el tamaño especial que debe tener: <strong>flex-grow</strong>, <strong>flex-shring</strong> y <strong>flex-basis</strong>.
       </li>
-    </ul>
+    </ol start="10">
 
   </body>
 
