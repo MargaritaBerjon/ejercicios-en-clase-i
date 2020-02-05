@@ -1,0 +1,17 @@
+.border {
+  border: red 5px dotted;
+}
+
+.border-box {
+  box-sizing: border-box;
+  background: red;
+  width: 200px;
+  padding: 20px;
+}
+
+.border-box2 {
+  box-sizing: content-box;
+  background: red;
+  width: 200px;
+  padding: 20px;
+}
