@@ -87,12 +87,35 @@ ul {
 }
 
 .main-header {
-  background: #509bf5;
+  padding: 40px 300px 40px 40px;
   height: 50vh;
+  background: #509bf5;
   background-image: url(../images/premium_dancer.png);
   background-repeat: no-repeat;
   background-position: right top;
   color: white;
+}
+
+.main-header-title {
+  margin: 0;
+  line-height: 1.2;
+  font-size: 4rem;
+}
+
+.main-header-plans {
+  display: inline-block;
+  padding: 7px 40px;
+  border-radius: 20px;
+  background: #1ed760;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+
+.main-header-legal-info {
+  display: block;
+  margin-top: 50px;
 }
 
 /* premium */
