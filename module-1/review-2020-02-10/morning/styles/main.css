@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* main */
+
+.main {
+  height: 80vh;
+  display: flex;
+  /*
+  también se puede con los dos ejes:
+  descomenta esta línea
+  flex-direction: column;
+  */
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  font-weight: 900;
+  color: #cc212a;
+}
+
+.title-item {
+  display: block;
+}
+
+/* footer */
+
+.footer {
+  padding: 0 25px;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 3px solid #cc212a;
+}
+
+/*
+Distintas formas de hacer el círculo de la R.
+Esto sustituye a la clase siguiente .logo
+.logo {
+  padding: 27.5px 22px;
+  background: #cc212a;
+  border-radius: 50%;
+}
+
+.logo-inner {
+  display: inline-block;
+  text-align: center;
+  width: 30px;
+  font-weight: 900;
+  color: white;
+}
+*/
+
+.logo {
+  margin-top: -40px;
+  margin-bottom: 20px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  background: #cc212a;
+  border-radius: 50%;
+  color: white;
+}
+
+@media all and (min-width: 768px) {
+  .footer {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    margin: 0;
+  }
+}
+
+/* boxes */
+
+/* .main {
+  border: 3px solid red;
+}
+
+.title {
+  border: 3px solid green;
+}
+
+.footer {
+  border: 3px solid blue;
+}
+
+.logo {
+  border: 3px solid pink;
+}
+
+.copy {
+  border: 3px solid yellow;
+} */
