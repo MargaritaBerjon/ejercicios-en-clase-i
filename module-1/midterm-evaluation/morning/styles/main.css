@@ -1,0 +1,88 @@
+/* reset */
+
+/*
+Quitamos el margen al H1 desde aquí o desde .title
+* {
+  margin: 0;
+}
+*/
+
+* {
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* header */
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+}
+
+.logo-link {
+  margin: 10px 0;
+}
+
+.logo-img {
+  width: 155px;
+}
+
+.menu-item {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.menu-link {
+  display: inline-block;
+  padding: 10px 10px 13px 10px;
+  text-decoration: none;
+  color: #4a4a4a;
+}
+
+/* main */
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 360px;
+  background: #3cdbc0;
+}
+
+.title {
+  /* margin: 0; Esto es por el comentario de la línea 4 */
+  font-size: 30px;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+}
+
+.title-item {
+  display: block;
+}
+
+/* media queries */
+
+@media all and (min-width: 768px) {
+  .header {
+    padding-right: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .logo-link {
+    margin-left: 30px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+}
