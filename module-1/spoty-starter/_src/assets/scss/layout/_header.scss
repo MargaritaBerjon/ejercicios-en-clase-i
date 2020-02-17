@@ -1,0 +1,62 @@
+.header{
+  background-color: $headerBackground;
+  
+  & .logo-container{
+    width:100px;
+
+    & img {
+      width: 100%;
+    }
+  }
+  &__container {
+    @extend .container;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main-menu {
+    ul {
+      display: none;
+
+      @include forTablet {
+        display: block;
+      }
+  
+      & li {
+        display: inline;
+  
+        & a {
+          color:$heroMainText;
+          padding: 5px;
+        }
+      }
+    }
+
+    & .menu-icon{
+      display: block;
+      width: 25px;
+      height: 25px;
+      background: url(../images/menu.png) no-repeat;
+      background-size: 100%;
+
+      @include forTablet {
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

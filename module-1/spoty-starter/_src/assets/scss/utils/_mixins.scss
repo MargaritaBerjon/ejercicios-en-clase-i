@@ -1,0 +1,13 @@
+@mixin mainPageTitle {
+  font-family: $textFont;
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+@mixin forTablet {
+  @media all and (min-width: $tablet) { @content; }
+}
+
+@mixin forPc {
+  @media all and (min-width: $pc) { @content; }
+}
