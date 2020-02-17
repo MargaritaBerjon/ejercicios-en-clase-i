@@ -1,0 +1,33 @@
+// mixin
+
+@mixin title($color) {
+  font-size: 26px;
+  font-family: Rubik;
+  color: $color;
+}
+
+.main .title {
+  background: red;
+  @include title(red);
+  margin: 10px;
+}
+
+.footer .copy {
+  @include title(blue);
+}
+
+// mixin con content
+
+@mixin space() {
+  padding: 10px;
+  @content;
+  color: red;
+}
+
+@media all and (min-width: 768px) {
+  footer {
+    @include space() {
+      margin: 10px;
+    }
+  }
+}
