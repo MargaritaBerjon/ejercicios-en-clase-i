@@ -1,0 +1,21 @@
+.list {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 100px 100px 100px;
+  grid-gap: 5px;
+  grid-template-areas:
+    'lefttop right'
+    'leftcenter right'
+    'leftbottom right';
+}
+
+.list__item {
+  list-style: none;
+  text-align: center;
+  background: #ccc;
+}
+
+.item__c {
+  grid-area: right;
+}

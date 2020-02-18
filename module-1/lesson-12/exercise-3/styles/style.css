@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.header {
+  grid-column: span 12;
+  height: 20vh;
+  background-color: pink;
+}
+
+.nav {
+  grid-column: span 4;
+  height: 60vh;
+  background-color: blue;
+}
+
+.main {
+  grid-column: span 8;
+  height: 60vh;
+  background-color: red;
+}
+
+.footer {
+  grid-column: span 12;
+  height: 20vh;
+  background-color: cyan;
+}
