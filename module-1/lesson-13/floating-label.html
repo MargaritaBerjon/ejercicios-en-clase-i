@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  /*RESET*/
+  body {
+    margin: 0;
+  }
+  /**/
+  .float-label{
+    position: absolute;
+    left: 0;
+    transform: scale(1) translate(0px); 
+    transition: all 1000ms ease;
+    font-size: 20px;
+  }
+
+  .float-label-field {
+    border-width: 0;
+    color: rgba(#2c3e50, .75);
+    border: 1px solid grey;
+  }
+
+  .float-label-field:focus{
+    outline: 0;
+    box-shadow: 0;
+  }
+
+  .float-label-field::placeholder {
+    color: transparent;
+  }
+
+  .float-wrap{
+    padding: 20px;
+    padding-left: 0;
+  }
+  /*Con el selector + accedo al label que se encuentra inmediatamente después del input que tiene la clase float-label-field, en su estado :focus*/
+  .float-label-field:focus + .float-label{
+    color: red;
+    transform: scale(0.5) translate(-27px,-43px); 
+    transition: all 1000ms ease;
+  }
+  </style>
+</head>
+<body>
+  <div class="float-wrap">
+    <input type="text" class="float-label-field">
+    <label class="float-label">Field 1</label>
+  </div>
+</body>
+</html>
