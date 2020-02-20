@@ -1,0 +1,11 @@
+.author {
+  background: #eee;
+
+  &__img {
+    border-radius: 50%;
+  }
+
+  &__title {
+    font-size: $authorTitleFontSize;
+  }
+}

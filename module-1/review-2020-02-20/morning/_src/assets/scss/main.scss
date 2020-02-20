@@ -1,0 +1,37 @@
+@import "core/variables";
+@import "core/reset";
+@import "components/distribution";
+@import "components/author";
+
+// se borrará
+.container-page {
+  border: solid 10px black;
+}
+
+.primary-col {
+  border: solid 10px yellow;
+}
+
+.header {
+  border: solid 10px blue;
+}
+
+.posts {
+  border: solid 10px pink;
+}
+
+.secondary-col {
+  border: solid 10px green;
+}
+
+.author {
+  border: solid 10px purple;
+}
+
+.menu {
+  border: solid 10px orange;
+}
+
+.footer {
+  border: solid 10px red;
+}

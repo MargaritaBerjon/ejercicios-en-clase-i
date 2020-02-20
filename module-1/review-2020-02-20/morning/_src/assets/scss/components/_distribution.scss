@@ -1,0 +1,44 @@
+// @media all and (max-width: 768px) {
+//   .secondary-col {
+//     display: flex;
+//   }
+
+//   .author,
+//   .menu {
+//     width: 50%;
+//   }
+// }
+
+.secondary-col {
+  display: flex;
+}
+
+.author,
+.menu {
+  width: 50%;
+}
+
+@media all and (min-width: 768px) {
+  .secondary-col {
+    display: block;
+  }
+
+  .author,
+  .menu {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .container-page {
+    display: flex;
+  }
+
+  .primary-col {
+    width: 70%;
+  }
+
+  .secondary-col {
+    width: 30%;
+  }
+}
