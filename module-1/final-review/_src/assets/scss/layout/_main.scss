@@ -1,0 +1,7 @@
+.page {
+  &__main{
+    @include forTablet{
+      grid-column: 1/6;
+    }
+  }
+}

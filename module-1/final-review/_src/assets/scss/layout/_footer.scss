@@ -1,0 +1,9 @@
+.page{
+
+  &__footer{
+    @include forTablet{
+      grid-column: 1/9;
+    }
+    border-top: $lineSpace;
+  }
+}

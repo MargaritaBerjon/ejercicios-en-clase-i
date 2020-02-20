@@ -1,0 +1,20 @@
+.page{
+  &__aside{
+
+    @include forTablet{
+      grid-column: 6/9;
+    }
+
+    .container{
+      display: flex;
+
+      @include forTablet{
+        display: block;
+      }
+      
+      &__item{
+        width: 50%;
+      }
+    }
+  }
+}

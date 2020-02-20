@@ -1,0 +1,9 @@
+.page__header{
+  text-align: center;
+  border-bottom: $lineSpace;
+
+  @include forTablet{
+    grid-column: 1/9;
+    text-align: left;
+  }
+}

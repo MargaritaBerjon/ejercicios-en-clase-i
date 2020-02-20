@@ -1,0 +1,5 @@
+@mixin forTablet {
+  @media all and (min-width:$tablet){
+    @content
+  }
+}
