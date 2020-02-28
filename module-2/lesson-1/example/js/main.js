@@ -21,9 +21,11 @@ const add = function() {
   const resultValue = numberAValue + numberBValue;
   // check resultElement
   if (isNaN(resultValue)) {
+    resultElement.classList.add('text--error');
     resultElement.value = 'Datos inválidos';
   } else {
     // set resultElement value in resultElement input element
+    resultElement.classList.remove('text--error');
     resultElement.value = resultValue;
   }
 };
