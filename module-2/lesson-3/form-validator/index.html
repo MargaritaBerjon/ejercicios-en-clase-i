@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Form validator</title>
+  <style>
+    .error{
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <form>
+      <div class="wrapper-user" id="wrapper-user">
+        <label for="user-name">Nombre*</label>
+        <input type="text" name="user" id="user-name">
+      </div>
+      <div class="wrapper-email" id="wrapper-email">
+        <label for="email">Email*</label>
+        <input type="email" name="email" id="user-email">
+      </div>
+      <button id="submit" type="button">Enviar</button>
+  </form>
+  <script src="./js/main.js"></script>
+</body>
+</html>
