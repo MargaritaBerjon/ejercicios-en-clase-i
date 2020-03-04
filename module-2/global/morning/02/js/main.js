@@ -22,7 +22,8 @@ let product3Quantity = 1;
 const productsElement = document.querySelector('.js-products');
 
 function getProductHtmlCode(name, price, imageUrl) {
-  let htmlCode = `<article class="card">`;
+  let htmlCode = '';
+  htmlCode += `<article class="card">`;
   htmlCode += `  <img src="${imageUrl}" class="card__img" alt="Camiseta de ${name}">`;
   htmlCode += `  <h3 class="card__title">${name}</h3>`;
   htmlCode += `  <p class="card__description">${price} €</p>`;
@@ -45,7 +46,8 @@ paintProducts();
 const cartElement = document.querySelector('.js-cart');
 
 function getCartItemHtmlCode(name, price, quantity) {
-  let htmlCode = `<tr>`;
+  let htmlCode = '';
+  htmlCode += `<tr>`;
   htmlCode += `  <td>${name}</td>`;
   htmlCode += `  <td>${price}</td>`;
   htmlCode += `  <td>`;
@@ -60,7 +62,8 @@ function getCartItemHtmlCode(name, price, quantity) {
 }
 
 function getCartTotalHtmlCode() {
-  let htmlCode = `<tr class="text--bold">`;
+  let htmlCode = '';
+  htmlCode += `<tr class="text--bold">`;
   htmlCode += `  <td>Total</td>`;
   // el precio total lo calcularemos luego
   htmlCode += `  <td colspan="3" class="text-align-right">66,00€</td>`;
