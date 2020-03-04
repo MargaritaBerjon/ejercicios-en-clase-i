@@ -7,7 +7,7 @@ const paragraph = document.querySelector('.js-paragraph');
 const link = document.querySelector('.js-link');
 
 const handleElementClick = ev => {
-  console.log(`El elemento pulsado es ${ev.target.tagName} y el escuchado es ${ev.currentTarget.tagName}`);
+  console.log(`El elemento pulsado (ev.target) es ${ev.target.tagName} y el escuchado (ev.currentTarget) es ${ev.currentTarget.tagName}`);
   ev.preventDefault();
 };
 
