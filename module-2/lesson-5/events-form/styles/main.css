@@ -1,0 +1,65 @@
+*{
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,h2{
+  font-size: 16px;
+  margin: 0;
+}
+
+h1{
+  margin-bottom: 20px;
+}
+
+h2{
+  margin-top: 10px;
+}
+
+.hidden{
+  display: none;
+}
+
+.flex-left, .flex-right {
+  width: 30%;
+}
+
+.form-information {
+  font-size: 14px;
+}
+
+.form-information input{
+  display: block;
+}
+
+.form-information label{
+  display:inline-block;
+  margin-top: 15px;
+}
+
+.info-review{
+  border: 1px solid grey;
+  padding: 15px;
+}
+
+#submit-btn{
+  margin-top: 20px;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.legal-span{
+  font-size: 13px;
+  color: grey;
+  margin-top: 50px;
+  display: block;
+}
+
+.legal-text {
+  background-color: #eaeaea;
+  font-size: 12px;
+  width: 300px;
+  padding: 20px;
+}
