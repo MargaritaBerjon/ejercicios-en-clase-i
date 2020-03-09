@@ -1,35 +1,33 @@
 'use strict';
 
-// En capítulos anteriores: mostrar dirección y crear método incQuantity
-
 // data
 
-const product1 = {
-  name: 'Node JS',
-  price: 12,
-  imageUrl: './images/node-js.jpg',
-  quantity: 1,
-  incQuantity: incQuantity,
-  decQuantity: decQuantity
-};
-
-const product2 = {
-  name: 'JavaScript',
-  price: 15,
-  imageUrl: './images/javascript.jpg',
-  quantity: 1,
-  incQuantity: incQuantity,
-  decQuantity: decQuantity
-};
-
-const product3 = {
-  name: 'React JS',
-  price: 13,
-  imageUrl: './images/react.jpg',
-  quantity: 1,
-  incQuantity: incQuantity,
-  decQuantity: decQuantity
-};
+const products = [
+  {
+    name: 'Node JS',
+    price: 12,
+    imageUrl: './images/node-js.jpg',
+    quantity: 1,
+    incQuantity: incQuantity,
+    decQuantity: decQuantity
+  },
+  {
+    name: 'JavaScript',
+    price: 15,
+    imageUrl: './images/javascript.jpg',
+    quantity: 1,
+    incQuantity: incQuantity,
+    decQuantity: decQuantity
+  },
+  {
+    name: 'React JS',
+    price: 13,
+    imageUrl: './images/react.jpg',
+    quantity: 1,
+    incQuantity: incQuantity,
+    decQuantity: decQuantity
+  }
+];
 
 // product objects methods
 
@@ -59,12 +57,15 @@ function getProductHtmlCode(product) {
 }
 
 function paintProducts() {
-  // iterar con for of
-  // usar variable htmlCode
-  const _product1 = getProductHtmlCode(product1);
-  const _product2 = getProductHtmlCode(product2);
-  const _product3 = getProductHtmlCode(product3);
-  productsElement.innerHTML = _product1 + _product2 + _product3;
+  let productsCode = '';
+  for (const product of products) {
+    productsCode += getProductHtmlCode(product);
+  }
+  productsElement.innerHTML = productsCode;
+  // const _product1 = getProductHtmlCode(product1);
+  // const _product2 = getProductHtmlCode(product2);
+  // const _product3 = getProductHtmlCode(product3);
+  // productsElement.innerHTML = _product1 + _product2 + _product3;
 }
 
 paintProducts();
@@ -98,15 +99,24 @@ function getCartTotalHtmlCode(totalPrice) {
 }
 
 function paintCartItems() {
-  // iterar con for clásico
-  // usar cartElement.innerHTML = ''; y cartElement.innerHTML += ...
+  // cartElement.innerHTML = '';
+  // for (let i = 0; i < products.length; i += 1) {
+  //   cartElement.innerHTML += getCartItemHtmlCode(products[i]);
+  // }
+
   cartElement.innerHTML = '';
-  const totalPrice = product1.price * product1.quantity + product2.price * product2.quantity + product3.price * product3.quantity;
-  const item1 = getCartItemHtmlCode(product1);
-  const item2 = getCartItemHtmlCode(product2);
-  const item3 = getCartItemHtmlCode(product3);
-  const total = getCartTotalHtmlCode(totalPrice);
-  cartElement.innerHTML = item1 + item2 + item3 + total;
+  for (let i = products.length - 1; i >= 0; i -= 1) {
+    cartElement.innerHTML += getCartItemHtmlCode(products[i]);
+  }
+
+  // cartElement.innerHTML = '';
+  // for (const product of products) {
+  //   cartElement.innerHTML += getCartItemHtmlCode(product);
+  // }
+
+  // const totalPrice = product1.price * product1.quantity + product2.price * product2.quantity + product3.price * product3.quantity;
+  // const total = getCartTotalHtmlCode(totalPrice);
+  // cartElement.innerHTML = item1 + item2 + item3 + total;
   listenCartBtns();
 }
 
