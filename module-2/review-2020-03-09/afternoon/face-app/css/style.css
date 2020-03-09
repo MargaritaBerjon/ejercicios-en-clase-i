@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main{
+  background:#ffcc00;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.face{
+  font-size: 150px;
+  font-weight:bold;
+  margin-bottom: 80px;
+}
+
+.mood{
+  border: none;
+  padding: 6px;
+  border-radius: 5px;
+  background-color: #eaeaea;
+  min-width:100px
+}
+
+.button-default{
+  background-color: cornflowerblue;
+  color:white;
+  border: none;
+  padding: 6px;
+  border-radius: 5px;
+  min-width:100px
+}
+
+.angry{
+  background-color:#ff9900;
+}
+
+
