@@ -43,7 +43,7 @@ function theYoungest(arr){
 }
 
 const youngestAdalaber = theYoungest(adalabers);
-console.log(`La adalaber más joven tiene ${youngestAdalaber} años`);
+console.log(`La adalaber más joven es ${youngestAdalaber}`);
 
 
 //MEDIA DE EDAD DE LAS ADALABERS
