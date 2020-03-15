@@ -22,7 +22,7 @@ function addNewTaskHandler(){
 //PASO 4 A---> createNewTask valida mi input, ya que siempre que enviamos datos por un input debemos contemplar que estos vengan correctamente o mi input no venga vacío
 const createNewTask = () => {
   //si mi input no viene vacío, es decir, su longitud es distinta de 0, entonces añado su input.value al array vacío con push y ejecuto la función addLiElement para pintar mi elemento en el HTML, en caso contrario, es decir si me llega vacío lanzo un alert con un aviso
-  if(elementInput.value.length !== 0){
+  if(elementInput.value !== ''){
     taskList.push(elementInput.value);
     addLiElement();
   } else{
