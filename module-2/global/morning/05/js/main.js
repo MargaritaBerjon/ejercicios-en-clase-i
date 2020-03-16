@@ -1,43 +1,59 @@
 'use strict';
 
-// data
+// fetch
 
-const products = [
-  {
-    name: 'Node JS',
-    price: 12,
-    imageUrl: './images/node-js.jpg',
-    quantity: 1,
-    incQuantity: incQuantity,
-    decQuantity: decQuantity
-  },
-  {
-    name: 'JavaScript',
-    price: 15,
-    imageUrl: './images/javascript.jpg',
-    quantity: 1,
-    incQuantity: incQuantity,
-    decQuantity: decQuantity
-  },
-  {
-    name: 'React JS',
-    price: 13,
-    imageUrl: './images/react.jpg',
-    quantity: 1,
-    incQuantity: incQuantity,
-    decQuantity: decQuantity
-  }
-];
+let products = [];
 
-// product objects methods
-
-function incQuantity() {
-  this.quantity += 1;
+function getApiCart() {
+  console.log('Pido los datos: fase 1');
+  fetch('./api/data.json')
+    .then(function(response) {
+      console.log('Ya tengo los datos');
+      return response.json();
+    })
+    .then(function(data) {
+      console.log(data.cart.items);
+      products = data.cart.items;
+      paintProducts();
+      paintCartItems();
+    });
+  console.log('Pido los datos: fase 2');
 }
 
-function decQuantity() {
-  if (this.quantity > 0) {
-    this.quantity -= 1;
+getApiCart();
+
+// data
+
+// const products = [
+//   {
+//     name: 'Node JS',
+//     price: 12,
+//     imageUrl: './images/node-js.jpg',
+//     quantity: 1
+//   },
+//   {
+//     name: 'JavaScript',
+//     price: 15,
+//     imageUrl: './images/javascript.jpg',
+//     quantity: 1
+//   },
+//   {
+//     name: 'React JS',
+//     price: 13,
+//     imageUrl: './images/react.jpg',
+//     quantity: 1
+//   }
+// ];
+
+// product functions
+
+function incQuantity(product) {
+  product.quantity += 1;
+}
+
+function decQuantity(product) {
+  if (product.quantity > 0) {
+    product.quantity -= 1;
   }
 }
 
@@ -64,8 +80,6 @@ function paintProducts() {
   productsElement.innerHTML = productsCode;
 }
 
-paintProducts();
-
 // paint cart items
 
 const cartElement = document.querySelector('.js-cart');
@@ -89,7 +103,6 @@ function getCartTotalHtmlCode() {
   let htmlCode = '';
   htmlCode += `<tr class="text--bold">`;
   htmlCode += `  <td>Total</td>`;
-  // en capítulos anteriores: calculamos así el precio total
   htmlCode += `  <td colspan="3" class="text-align-right">${getTotalPrice()}€</td>`;
   htmlCode += `</tr>`;
   return htmlCode;
@@ -97,7 +110,6 @@ function getCartTotalHtmlCode() {
 
 function paintCartItems() {
   cartElement.innerHTML = '';
-  // en capítulos anteriores: lo he vuelto a poner en orden ascendente
   for (let i = 0; i < products.length; i += 1) {
     cartElement.innerHTML += getCartItemHtmlCode(products[i]);
   }
@@ -106,34 +118,26 @@ function paintCartItems() {
 }
 
 function getTotalPrice() {
-  // en capítulos anteriores: calculamos así el precio total
   let total = 0;
   for (const product of products) {
-    total += product.price;
+    total += product.price * product.quantity;
   }
   return total;
 }
-
-paintCartItems();
 
 // listen events
 
 function handleQuantityBtn(ev) {
   const currentTarget = ev.currentTarget;
   if (currentTarget.classList.contains('js-inc-btn')) {
-    products[0].incQuantity();
-    // en capítulos anteriores: product1 ya no existe, ahora es products[0]
-    // product1.incQuantity();
+    incQuantity(products[0]);
   } else if (currentTarget.classList.contains('js-dec-btn')) {
-    // en capítulos anteriores: product1 ya no existe, ahora es products[0]
-    // product1.decQuantity();
-    products[0].decQuantity();
+    decQuantity(products[0]);
   }
   paintCartItems();
 }
 
 function listenCartBtns() {
-  // usar querySelectorAll para todos los botones
   const incBtn = document.querySelector('.js-inc-btn');
   incBtn.addEventListener('click', handleQuantityBtn);
   const decBtn = document.querySelector('.js-dec-btn');
