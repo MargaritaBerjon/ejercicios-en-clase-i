@@ -5,7 +5,8 @@ const nameInput = document.querySelector('.js-name');
 const surnameInput = document.querySelector('.js-surname');
 
 const getFromLocalStorage = () => {
-  const userData = JSON.parse(localStorage.getItem('userData'));
+  const userDataRaw = localStorage.getItem('userData');
+  const userData = JSON.parse(userDataRaw);
   if (userData !== null) {
     nameInput.value = userData.name;
     surnameInput.value = userData.surname;
