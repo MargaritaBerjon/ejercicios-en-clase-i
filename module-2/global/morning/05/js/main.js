@@ -62,10 +62,6 @@ function paintProducts() {
     productsCode += getProductHtmlCode(product);
   }
   productsElement.innerHTML = productsCode;
-  // const _product1 = getProductHtmlCode(product1);
-  // const _product2 = getProductHtmlCode(product2);
-  // const _product3 = getProductHtmlCode(product3);
-  // productsElement.innerHTML = _product1 + _product2 + _product3;
 }
 
 paintProducts();
@@ -89,35 +85,33 @@ function getCartItemHtmlCode(product) {
   return htmlCode;
 }
 
-function getCartTotalHtmlCode(totalPrice) {
+function getCartTotalHtmlCode() {
   let htmlCode = '';
   htmlCode += `<tr class="text--bold">`;
   htmlCode += `  <td>Total</td>`;
-  htmlCode += `  <td colspan="3" class="text-align-right">${totalPrice}€</td>`;
+  // en capítulos anteriores: calculamos así el precio total
+  htmlCode += `  <td colspan="3" class="text-align-right">${getTotalPrice()}€</td>`;
   htmlCode += `</tr>`;
   return htmlCode;
 }
 
 function paintCartItems() {
-  // cartElement.innerHTML = '';
-  // for (let i = 0; i < products.length; i += 1) {
-  //   cartElement.innerHTML += getCartItemHtmlCode(products[i]);
-  // }
-
   cartElement.innerHTML = '';
-  for (let i = products.length - 1; i >= 0; i -= 1) {
+  // en capítulos anteriores: lo he vuelto a poner en orden ascendente
+  for (let i = 0; i < products.length; i += 1) {
     cartElement.innerHTML += getCartItemHtmlCode(products[i]);
   }
-
-  // cartElement.innerHTML = '';
-  // for (const product of products) {
-  //   cartElement.innerHTML += getCartItemHtmlCode(product);
-  // }
-
-  // const totalPrice = product1.price * product1.quantity + product2.price * product2.quantity + product3.price * product3.quantity;
-  // const total = getCartTotalHtmlCode(totalPrice);
-  // cartElement.innerHTML = item1 + item2 + item3 + total;
+  cartElement.innerHTML += getCartTotalHtmlCode();
   listenCartBtns();
+}
+
+function getTotalPrice() {
+  // en capítulos anteriores: calculamos así el precio total
+  let total = 0;
+  for (const product of products) {
+    total += product.price;
+  }
+  return total;
 }
 
 paintCartItems();
@@ -127,15 +121,19 @@ paintCartItems();
 function handleQuantityBtn(ev) {
   const currentTarget = ev.currentTarget;
   if (currentTarget.classList.contains('js-inc-btn')) {
-    product1.incQuantity();
+    products[0].incQuantity();
+    // en capítulos anteriores: product1 ya no existe, ahora es products[0]
+    // product1.incQuantity();
   } else if (currentTarget.classList.contains('js-dec-btn')) {
-    product1.decQuantity();
+    // en capítulos anteriores: product1 ya no existe, ahora es products[0]
+    // product1.decQuantity();
+    products[0].decQuantity();
   }
   paintCartItems();
 }
 
 function listenCartBtns() {
-  // usar querySelectorAll
+  // usar querySelectorAll para todos los botones
   const incBtn = document.querySelector('.js-inc-btn');
   incBtn.addEventListener('click', handleQuantityBtn);
   const decBtn = document.querySelector('.js-dec-btn');
@@ -157,7 +155,8 @@ function handleAddress(ev) {
 }
 
 function paintAddress() {
-  document.querySelector('.js-address-info').innerHTML = `${userAddress.address || ''} ${userAddress.city || ''} ${userAddress.zip || ''}`;
+  const addressInfo = document.querySelector('.js-address-info');
+  addressInfo.innerHTML = `${userAddress.address || ''} ${userAddress.city || ''} ${userAddress.zip || ''}`;
 }
 
 address.addEventListener('keyup', handleAddress);
