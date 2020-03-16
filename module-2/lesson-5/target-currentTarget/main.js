@@ -5,29 +5,29 @@ const buttonElem = document.querySelector('.button');
 
 
 //TARGET VS CURRENT TARGET
-// function showInfo(event){
-//   console.log(`Mi currentTarget es ${event.currentTarget.id}`);
-//   console.log(`Mi target es ${event.target.id}`);
+function showInfo(event){
+  console.log(`Mi currentTarget es ${event.currentTarget.id}`);
+  console.log(`Mi target es ${event.target.id}`);
+}
+
+container.addEventListener('click',showInfo);
+////////
+
+
+
+// //EVENT BUBBLING
+// function buttonInfo(event){
+//   console.log('click en el botón');
+//   event.stopPropagation();
 // }
 
-// container.addEventListener('click',showInfo);
-////////
+// function containerInfo(){
+//   console.log('click en el container');
+// }
 
-
-
-//EVENT BUBBLING
-function buttonInfo(event){
-  console.log('click en el botón');
-  event.stopPropagation();
-}
-
-function containerInfo(){
-  console.log('click en el container');
-}
-
-buttonElem.addEventListener('click',buttonInfo);
-container.addEventListener('click',containerInfo);
-////////
+// buttonElem.addEventListener('click',buttonInfo);
+// container.addEventListener('click',containerInfo);
+// ////////
 
 
 
