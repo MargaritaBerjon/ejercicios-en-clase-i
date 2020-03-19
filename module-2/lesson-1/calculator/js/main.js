@@ -22,11 +22,11 @@ const add = function() {
   // check resultElement
   if (isNaN(resultValue)) {
     resultElement.classList.add('text--error');
-    resultElement.value = 'Datos inválidos';
+    resultElement.innerHTML = 'Datos inválidos';
   } else {
     // set resultElement value in resultElement input element
     resultElement.classList.remove('text--error');
-    resultElement.value = resultValue;
+    resultElement.innerHTML = resultValue;
   }
 };
 
@@ -34,3 +34,18 @@ const add = function() {
 numberAElement.addEventListener('change', add);
 // listen changes in numberAElement input
 numberBElement.addEventListener('change', add);
+
+// reset button
+
+// get resetElement dom element
+const resetElement = document.querySelector('.js-reset');
+
+// clean all inputs
+const reset = function() {
+  numberAElement.value = '';
+  numberBElement.value = '';
+  resultElement.innerHTML = '';
+};
+
+// listen click in reset button
+resetElement.addEventListener('click', reset);
