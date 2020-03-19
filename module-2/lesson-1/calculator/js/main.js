@@ -40,7 +40,7 @@ numberBElement.addEventListener('change', add);
 // get resetElement dom element
 const resetElement = document.querySelector('.js-reset');
 
-// clean all inputs
+// clear all inputs
 const reset = function() {
   numberAElement.value = '';
   numberBElement.value = '';
